@@ -1,6 +1,6 @@
 export class Metricvalue {
     constructor(
-        public metricId?: bigint,
+        public metricId?: number,
         public value?: number,
 		public Timestamp?: Date
     ) {}

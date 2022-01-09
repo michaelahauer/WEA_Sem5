@@ -2,12 +2,12 @@ import { Timestamp } from "rxjs";
 
 export class Log {
     constructor(
-        public id: bigint,
+        public id: number,
         public clientApplicationName: string,
-        public clientInstanceAssignedId: bigint,
+        public clientInstanceAssignedId: number,
         public telemetryDataName : string,
         public message: string,
-        public category: bigint,
+        public category: number,
         public createdTimestamp: Date
     ) {}
 }
