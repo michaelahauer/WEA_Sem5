@@ -1,10 +1,10 @@
 export class Metric {
     constructor(
-        public id?: bigint,
+        public id?: number,
         public clientApplicationName?: string,
-        public clientInstanceAssignedId?: bigint,
+        public clientInstanceAssignedId?: number,
         public telemetryDataName?: string,
-        public metricType?: bigint,
+        public metricType?: number,
 		public CreatedTimestamp?: Date
     ) {}
 }

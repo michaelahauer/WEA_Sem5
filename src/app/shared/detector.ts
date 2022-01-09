@@ -1,24 +1,24 @@
 export class Detector {
     constructor(
-        public id?: bigint,
-		public MetricId?: bigint,
-		public PauseTimeInSec?: bigint, 
-		public BackTimeInSec?: bigint, 
-		public Name?: string, 				
-		public CreatedTimestamp?: Date, 
-		public DetectorType?: bigint,                // Boundary = 1, SlidingWindow = 2
-		public IsActive?: Boolean, 		
-		public LastTriggered?: Date, 
+        public id?: number,
+		public metricId?: number,
+		public pauseTimeInSec?: number, 
+		public backTimeInSec?: number, 
+		public name?: string, 				
+		public createdTimestamp?: Date, 
+		public detectorType?: number,                // Boundary = 1, SlidingWindow = 2
+		public isActive?: Boolean, 		
+		public lastTriggered?: Date, 
 
 //SlidingWindowDetector:
-        public ThresholdValue?: number, 
-        public TimeWindowInSec?: bigint, 
-        public AggregationType?: bigint, 			// CurrentVal = 1, Sum = 2, Avg = 3
-        public ComparisonOperation?: bigint, 		// Smaller = 1, Bigger = 2
+        public thresholdValue?: number, 
+        public timeWindowInSec?: number, 
+        public aggregationType?: number, 			// CurrentVal = 1, Sum = 2, Avg = 3
+        public comparisonOperation?: number, 		// Smaller = 1, Bigger = 2
 
 //BoundaryDetector:
-        public LowerLimit?: number, 
-        public UpperLimit?: number, 
-        public MaxAllowedOutlier?: bigint 
+        public lowerLimit?: number, 
+        public upperLimit?: number, 
+        public maxAllowedOutlier?: number 
     ) {}
 }

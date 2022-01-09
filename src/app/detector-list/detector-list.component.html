@@ -1,1 +1,25 @@
-<p>detector-list works!</p>
+<div class="ui middle aligned selection divided list">
+    <div class ="header">Liste aller Detektoren im System</div>
+    <!-- https://semantic-ui.com/collections/table.html -->
+    <table class="ui celled table">
+        <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Created</th>
+              <th>Is Active</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr *ngFor="let detector of detectors"  
+               [routerLink]="''+detector.id" >
+            <td class ="header">{{detector.name}}</td>
+            <td class="description" *ngIf="detector.detectorType == 1">Boundary Detector</td>
+            <td class="description" *ngIf="detector.detectorType !== 1">Sliding Window Detector</td>
+            <td class="description">{{detector.createdTimestamp}}</td>
+            <td class="description">{{detector.isActive}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
