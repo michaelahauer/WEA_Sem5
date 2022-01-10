@@ -1,3 +1,5 @@
+import { DetectorDetails } from "./detector-details";
+
 export class Detector {
     constructor(
         public id?: number,
@@ -9,16 +11,6 @@ export class Detector {
 		public detectorType?: number,                // Boundary = 1, SlidingWindow = 2
 		public isActive?: Boolean, 		
 		public lastTriggered?: Date, 
-
-//SlidingWindowDetector:
-        public thresholdValue?: number, 
-        public timeWindowInSec?: number, 
-        public aggregationType?: number, 			// CurrentVal = 1, Sum = 2, Avg = 3
-        public comparisonOperation?: number, 		// Smaller = 1, Bigger = 2
-
-//BoundaryDetector:
-        public lowerLimit?: number, 
-        public upperLimit?: number, 
-        public maxAllowedOutlier?: number 
+        public detail: DetectorDetails = new DetectorDetails(0,0,0,0,0,0,0)
     ) {}
 }

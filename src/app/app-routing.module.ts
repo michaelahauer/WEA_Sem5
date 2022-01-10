@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DetectorListComponent } from './detector-list/detector-list.component';
-import { CanNavigateToAdminGuard } from './can-navigate-to-admin.guard';
+//import { CanNavigateToAdminGuard } from './can-navigate-to-admin.guard';
 import { HomeComponent } from './home/home.component';
 import { LogsListComponent } from './logs-list/logs-list.component';
 import { MetricDetailComponent } from './metric-detail/metric-detail.component';
 import { MetricsListComponent } from './metrics-list/metrics-list.component';
-import { DetectorAdminComponent } from './detector-admin/detector-admin.component';
+import { DetectorsFormComponent } from './detectors-form/detectors-form.component';
 
 const routes: Routes = [
   {
@@ -41,7 +41,7 @@ const routes: Routes = [
    },
    {
      path: 'detectors/:id',
-     component: DetectorAdminComponent,       //TO-DO
+     component: DetectorsFormComponent,       //TO-DO
      //canActivate: [CanNavigateToAdminGuard]
    },
    {

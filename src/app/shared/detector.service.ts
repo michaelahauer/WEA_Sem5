@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { SlidingDetector } from './sliding-detector';
+import { BindingDetector } from './binding-detector';
 import { Detector } from './detector';
 
 @Injectable({
@@ -26,11 +28,11 @@ export class DetectorService {
     return this.http.get<Detector[]>(`${environment.server}/Detector`);
   }  
 
-  getDetectorById(id: bigint): Observable<Detector> {
+  getDetectorById(id: number): Observable<Detector> {
     return this.http.get<Detector>(`${environment.server}/Detector/${id}`)
   }
 
-  update(detector: Detector): Observable<any>{
+  update(detector: SlidingDetector | BindingDetector): Observable<any>{
     return this.http.put(`${environment.server}/Detector`, detector)
       .pipe(catchError(this.errorHandler));
   }
