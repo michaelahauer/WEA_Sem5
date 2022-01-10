@@ -10,7 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { MetricsListComponent } from './metrics-list/metrics-list.component';
 import { MetricDetailComponent } from './metric-detail/metric-detail.component';
 import { LogsListComponent } from './logs-list/logs-list.component';
-import { DetectorAdminComponent } from './detector-admin/detector-admin.component';
+import { DetectorsFormComponent } from './detectors-form/detectors-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,13 @@ import { DetectorAdminComponent } from './detector-admin/detector-admin.componen
     MetricsListComponent,
     MetricDetailComponent,
     LogsListComponent,
-    DetectorAdminComponent
+    DetectorsFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     //OAuthModule.forRoot()
   ],
   providers: [],

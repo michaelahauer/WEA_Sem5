@@ -1,0 +1,115 @@
+<h1>Detektor Admin Seite</h1>
+
+<form class="ui large form"
+  [formGroup]="myForm"
+  (ngSubmit)="submitForm()"
+>
+
+  <div class="field">
+    <label>Name</label>
+    <input
+      name="name"
+      formControlName="name"
+      >
+    <div *ngIf="errors.name" class="ui negative message">
+      {{ errors.name }}
+    </div>
+  </div>
+
+  <div class="field">
+    <label>PauseTime (sec.)</label>
+    <input
+      name="pauseTimeInSec"
+      formControlName="pauseTimeInSec"
+      >
+    <div *ngIf="errors.pauseTimeInSec" class="ui negative message">
+      {{ errors.pauseTimeInSec }}
+    </div>
+  </div>
+  
+  <div class="field">
+    <label>isActive (zeigt an ob Detektor noch aktuell ist oder veraltet/gesperrt)</label>
+    <input
+      name="isActive"
+      formControlName="isActive"
+      >
+  </div>
+
+  <div class="field">
+    <label>DetectorType (1 = Boundary-Detektor / 2 = SlidingWindow-Detektor)</label>
+    <input
+      name="detectorType"
+      formControlName="detectorType"
+      (keyup)="updateForm()"
+      >
+    <div *ngIf="errors.detectorType" class="ui negative message">
+      {{ errors.detectorType }}
+    </div>
+  </div>
+
+ 
+  <h3  *ngIf="detector.detectorType == 2">Details SlidingWindow-Detektor:</h3>
+
+  <div class="field"  *ngIf="detector.detectorType == 2">
+    <label>Grenzwert</label>
+    <input
+      name="thresholdValue"
+      formControlName="thresholdValue"
+      >
+  </div>
+
+  <div class="field"  *ngIf="detector.detectorType == 2">
+    <label>Zeitfenster</label>
+    <input
+      name="timeWindowInSec"
+      formControlName="timeWindowInSec"
+      >
+  </div>
+
+  <div class="field"  *ngIf="detector.detectorType == 2">
+    <label>Aggregations-Typ (1 = CurrentVal / 2 = Sum / 3 = Avg)</label>
+    <input
+        name="aggregationType"
+        formControlName="aggregationType"
+    >
+  </div>
+
+  <div class="field" *ngIf="detector.detectorType == 2">
+    <label>Vergleichsoperation (1 = smaller / 2 = bigger)</label>
+    <input
+        name="comparisonOperation"
+        formControlName="comparisonOperation"
+    >
+  </div>
+
+
+  <h3>Details Boundary-Detektor:</h3>
+
+  <div class="field" *ngIf="detector.detectorType == 1">
+    <label>untere Schranke</label>
+    <input
+      name="lowerLimit"
+      formControlName="lowerLimit"
+      >
+  </div>
+
+  <div class="field" *ngIf="detector.detectorType == 1">
+    <label>obere Schranke</label>
+    <input
+      name="upperLimit"
+      formControlName="upperLimit"
+      >
+  </div>
+
+  <div class="field" *ngIf="detector.detectorType == 1">
+    <label>maximal erlaubte Ausreißer</label>
+    <input
+        name="maxAllowedOutlier"
+        formControlName="maxAllowedOutlier"
+        >
+  </div>
+
+  <button type="submit" class="ui button" 
+          [disabled]="myForm.invalid"
+          (click)="submitForm()" >Änderungen speichern</button>
+</form>
