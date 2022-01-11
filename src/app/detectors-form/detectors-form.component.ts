@@ -18,10 +18,10 @@ import { SlidingDetectorDetails } from '../shared/sliding-detector-details';
   ]
 })
 export class DetectorsFormComponent implements OnInit {
-  isUpdatingDetector = false;
   myForm!: FormGroup;
   detector = new Detector();
   errors: { [key: string]: string } = {};
+  
   
   constructor(private fb: FormBuilder,
     private ds: DetectorService,
@@ -29,7 +29,6 @@ export class DetectorsFormComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    console.log("bin im onInit")
     this.route.params.subscribe(params => 
           this.ds.getDetectorById(2).subscribe(detector => {this.detector = detector; console.log(detector); this.initForm()}));
     this.initForm();

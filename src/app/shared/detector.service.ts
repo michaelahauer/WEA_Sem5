@@ -42,9 +42,6 @@ export class DetectorService {
       .pipe(catchError(this.errorHandler));
   }
 
-// TODO:
-// GET /Detector/{id}/detection (start detection)
-
   private initDetectors() {
 
   }

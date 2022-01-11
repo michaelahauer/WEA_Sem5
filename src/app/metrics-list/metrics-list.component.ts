@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Metric } from '../shared/metric';
 
 @Component({
   selector: 'aaas-metrics-list',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class MetricsListComponent implements OnInit {
+
+  metrics: Metric[] = []
 
   constructor() { }
 

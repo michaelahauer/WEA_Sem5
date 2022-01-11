@@ -1,1 +1,41 @@
-<p>logs-list works!</p>
+<form class="ui large form"
+  [formGroup]="myForm">
+    <div class="field">
+        <label>Suche nach Log-Bezeichnung:</label>
+        <input
+        name="name"
+        formControlName="name"
+        >
+    <button type="submit" class="ui button" 
+        [disabled]="myForm.invalid"
+        (click)="updateList()" >Suchen</button>
+    </div>
+
+</form>
+
+<div class="ui middle aligned selection divided list">
+    <div class ="header">Liste aller Detektoren im System</div>
+    <!-- https://semantic-ui.com/collections/table.html -->
+    <table class="ui celled table">
+        <thead>
+            <tr>
+              <th>ClientApplication Name</th>
+              <th>ClientInstance ID</th>
+              <th>Log-Bezeichnung</th>
+              <th>Message</th>
+              <th>Kategorie</th>
+              <th>Erstelldatum</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr *ngFor="let log of logs">
+            <td class ="description">{{log.clientApplicationName}}</td>
+            <td class="description">{{log.clientInstanceAssignedId}}</td>
+            <td class="description">{{log.telemetryDataName}}</td>
+            <td class ="description">{{log.message}}</td>
+            <td class="description">{{log.category}}</td>
+            <td class="description">{{log.createdTimestamp}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
