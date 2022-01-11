@@ -12,6 +12,8 @@ import { MetricDetailComponent } from './metric-detail/metric-detail.component';
 import { LogsListComponent } from './logs-list/logs-list.component';
 import { DetectorsFormComponent } from './detectors-form/detectors-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LogsItemListComponent } from './logs-item-list/logs-item-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MetricsListComponent,
     MetricDetailComponent,
     LogsListComponent,
-    DetectorsFormComponent
+    DetectorsFormComponent,
+    LogsItemListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    //OAuthModule.forRoot()
+    NgbModule
+    //OAuthModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
