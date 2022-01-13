@@ -14,6 +14,9 @@ import { DetectorsFormComponent } from './detectors-form/detectors-form.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogsItemListComponent } from './logs-item-list/logs-item-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BasicLinechartComponent } from './basic-linechart/basic-linechart.component';
+import {NgChartsModule} from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
@@ -24,14 +27,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MetricDetailComponent,
     LogsListComponent,
     DetectorsFormComponent,
-    LogsItemListComponent
+    LogsItemListComponent,
+    BasicLinechartComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    NgChartsModule
     //OAuthModule.forRoot(),
   ],
   providers: [],
