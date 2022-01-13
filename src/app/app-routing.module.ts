@@ -25,7 +25,7 @@ const routes: Routes = [
     //canActivate: [CanNavigateToAdminGuard]
    },
    {
-    path: 'metrics/:id',
+    path: 'metrics/MetricStatistics/:id',
     component: MetricDetailComponent,      // TO-DO
     //canActivate: [CanNavigateToAdminGuard]
    },

@@ -17,7 +17,7 @@ export class LogsListComponent implements OnInit {
   myForm!: FormGroup;
   searchString: string = '';
   @Input() length: Number = 1;
-  @Input() pageSize: Number = 30;
+  @Input() pageSize: Number = 1000000;
   @Input() collectionSize: Number = 0;
 
   constructor(private fb: FormBuilder,

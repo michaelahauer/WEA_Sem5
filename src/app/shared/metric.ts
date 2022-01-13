@@ -5,6 +5,6 @@ export class Metric {
         public clientInstanceAssignedId?: number,
         public telemetryDataName?: string,
         public metricType?: number,
-		public CreatedTimestamp?: Date
+		public createdTimestamp?: Date
     ) {}
 }

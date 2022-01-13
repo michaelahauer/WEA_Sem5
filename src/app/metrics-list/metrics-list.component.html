@@ -1,1 +1,28 @@
-<p>metrics-list works!</p>
+<div class="ui middle aligned selection divided list">
+    <div class ="header">Liste aller Metriken im System</div>
+    <!-- https://semantic-ui.com/collections/table.html -->
+    <table class="ui celled table">
+        <thead>
+            <tr>
+              <th>Application</th>
+              <th>Instance-ID (externe ID von Kunde)</th>
+              <th>Metric-Name</th>
+              <th>Metric-Typ</th>
+              <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr *ngFor="let metric of metrics"  
+               [routerLink]="['MetricStatistics', metric.id]" >
+            <td class ="header">{{metric.clientApplicationName}}</td>
+            <td class ="header">{{metric.clientInstanceAssignedId}}</td>
+            <td class="description">{{metric.telemetryDataName}}</td>
+            <td class="description" *ngIf="metric.metricType == 1">Counter Metric</td>
+            <td class="description" *ngIf="metric.metricType == 2">Measurement Metric</td>
+            <td class="description" *ngIf="metric.metricType == 3">TimeMeasurement Metric</td>
+            <td class="description">{{metric.createdTimestamp}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
