@@ -1,0 +1,17 @@
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui image header">
+      <div class="content">
+        Log-in to your account
+      </div>
+    </h2>
+    <form class="ui large form" _lpchecked="1"
+      #loginForm="ngForm"
+      (ngSubmit)="submitForm()">
+      <div class="ui stacked segment">
+        <button class="ui fluid large red submit button" [disabled]="loginForm.invalid">Login</button>
+      </div>
+      <div class="ui error message"></div>
+    </form>
+  </div>
+</div>

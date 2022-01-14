@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DetectorListComponent } from './detector-list/detector-list.component';
-//import { OAuthModule } from 'angular-oauth2-oidc';
+import { OAuthModule } from 'angular-oauth2-oidc';
 import { HomeComponent } from './home/home.component';
 import { MetricsListComponent } from './metrics-list/metrics-list.component';
 import { MetricDetailComponent } from './metric-detail/metric-detail.component';
@@ -16,6 +16,7 @@ import { LogsItemListComponent } from './logs-item-list/logs-item-list.component
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BasicLinechartComponent } from './basic-linechart/basic-linechart.component';
 import {NgChartsModule} from 'ng2-charts';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -29,16 +30,17 @@ import {NgChartsModule} from 'ng2-charts';
     DetectorsFormComponent,
     LogsItemListComponent,
     BasicLinechartComponent,
-
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
     NgbModule,
-    NgChartsModule
-    //OAuthModule.forRoot(),
+    NgChartsModule,
+    OAuthModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
