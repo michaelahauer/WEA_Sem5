@@ -11,15 +11,15 @@ import { ChartDataset, ChartOptions, ChartType } from 'chart.js';
 })
 export class BasicLinechartComponent implements OnInit {
   @Input()
-  data = new Array<number>();
+  data: number[] = [];
 
   @Input()
-  timestamps = new Array<string>();
+  timestamps: string[] = [];
 
   @Input()
   type: ChartType = "line";
 
-  lineChartData?: Array<ChartDataset>;
+  lineChartData?: ChartDataset[];
 
   ngOnInit(): void {
     this.lineChartData = new Array(

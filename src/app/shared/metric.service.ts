@@ -28,7 +28,7 @@ export class MetricService {
 
   getValuesByMetricId(id: number): Observable<Metricvalue[]> {
     let start = new Date();
-    start.setHours(start.getHours() -12);
+    start.setHours(start.getHours() -13);
     start.setMinutes(start.getMinutes() -4);
     let startmp = this.dateToString(start);
     let end = this.dateToString(new Date());
